@@ -1,0 +1,16 @@
+.env
+.git/
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+*.log
+Dockerfile
+.dockerignore
+README.md
+submission.jsonl
+gen_submission.py
+smoke_test.py

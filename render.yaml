@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: vera-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /v1/healthz
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: VERA_MODEL
+        value: gemini-2.5-flash
+      - key: VERA_FALLBACK_MODEL
+        value: gemini-2.5-flash-lite
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: TEAM_NAME
+        value: VeraBot
+      - key: TEAM_MEMBER
+        value: AjayKumar
